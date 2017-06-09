@@ -1,9 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Nav, NavParams, Slides  } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
+
 import { OAuthService } from '../oauth/oauth.service';
 import { LanguageService } from '../../services/language.service';
 import { AnswerService } from '../../services/answer.service';
+import { CameraService } from '../../services/camera.service';
 
 import { QuizResultsPage } from '../quiz-results/quiz-results';
 @Component({
@@ -29,7 +31,8 @@ export class QuizPage {
   oauthService: OAuthService,
   public languageService: LanguageService,
   public navParams: NavParams,
-  private answerService: AnswerService) {
+  private answerService: AnswerService,
+    public cameraService: CameraService) {
     oauthService.getProfile().toPromise()
         .then( profile => {
           this.profile = profile;
@@ -41,6 +44,7 @@ export class QuizPage {
         .catch(err => {
           console.log("Error" + JSON.stringify(err))
         });
+    this.cameraService.showLoading(1300);
 }
 
   ionViewDidLoad() {
@@ -53,7 +57,7 @@ export class QuizPage {
       this.answerChoiceArray = this.answerService.answerChoices;
       this.answerService.clearChoiceArray();
       this.makeQuizChoiceArray();
-    }, 1500);
+    }, 1200);
   }
 
   swipeLeftEvent(index) {
