@@ -1,4 +1,3 @@
-
 <ion-header class="blue-theme">
   <ion-navbar>
     <button ion-button menuToggle>
@@ -7,7 +6,6 @@
     <ion-title>{{ 'MY_DECKS' | translate }} </ion-title>
   </ion-navbar>
 </ion-header>
-
 
 <ion-content class="card-background-page">
   <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH' | translate }}"></ion-searchbar>
@@ -31,9 +29,3 @@
       </ion-item-sliding>
   </ion-list>
 </ion-content>
-<!--<ion-footer>
-  <ion-toolbar>
-  <button class="home-button" ion-button block outline>Home  <ion-icon name="home"></ion-icon></button>
-  <button class="home-button" ion-button block outline>Home  <ion-icon name="home"></ion-icon></button>
-  </ion-toolbar>
-</ion-footer>-->

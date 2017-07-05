@@ -8,7 +8,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-title>{{deckTitle}}</ion-title>
+  <!--<ion-title>{{deckTitle}}</ion-title>-->
+  <h1 class="deckTitle">{{deckTitle}}</h1>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item tappable *ngFor="let item of items; let i=index" (click)="markCard(item.id, i)">

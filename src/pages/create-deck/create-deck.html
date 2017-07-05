@@ -20,8 +20,8 @@
           <ion-avatar item-left>
             <img [src]="card.image" *ngIf="card.image" />
           </ion-avatar>
-          <h2 class="card-title text">{{card.word}}</h2>
-          <p class="card-subtitle text">{{card.translation}}</p>
+          <h2>{{card.word[nativeLang]}}</h2>
+          <p>{{card.word[learnLang]}}</p>
       </ion-item>
     </ion-card>
   </ion-list>

@@ -61,11 +61,14 @@ h4 {
     font-size: 1.2em;
     width: 100%;
     font-weight: bold;
-    color: black;
+    color: darkblue;
   }
   .intro{
     top:35%;
     font-family: arial;
     font-style: normal;
+  }
+  h1 .deckTitle {
+    color: red !important;
   }
 }

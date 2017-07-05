@@ -32,6 +32,8 @@ export class CreateDeckPage {
   public counter: number = 0;
   public deckId;
   public cards: Array<object>;
+  public nativeLang: any;
+  public learnLang: any;
 
   constructor(
     public navCtrl: NavController,
@@ -50,6 +52,8 @@ export class CreateDeckPage {
         this.profile = profile;
         translateService.use(languageService.translateLang(this.profile.nativeLang));
         this.cameraService.languages(this.languageService.translateLang(this.profile.nativeLang), this.languageService.translateLang(this.profile.learnLang))
+        this.nativeLang = this.languageService.translateLang(this.profile.nativeLang);
+        this.learnLang = this.languageService.translateLang(this.profile.learnLang);
       })
       .catch(err => {
         console.log("Error" + JSON.stringify(err))
